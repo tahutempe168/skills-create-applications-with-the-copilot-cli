@@ -9,7 +9,6 @@ Supported operations (from image and latest issue):
 
 This file implements a simple CLI calculator that accepts an operator and two operands,
 or runs interactively if no arguments are provided.
-Referenced issue: #${ISSUE_NUMBER}
 */
 
 const readline = require('readline');
@@ -117,3 +116,5 @@ if (require.main === module) {
   if (args.length === 0) runInteractive();
   else runFromArgs(args);
 }
+
+module.exports = { calc };
