@@ -117,4 +117,27 @@ if (require.main === module) {
   else runFromArgs(args);
 }
 
-module.exports = { calc };
+// Additional utility functions requested in the feature request
+function modulo(a, b) {
+  a = Number(a);
+  b = Number(b);
+  if (!isFinite(a) || !isFinite(b)) throw new Error('Operands must be valid numbers');
+  if (b === 0) throw new Error('Modulo by zero');
+  return a % b;
+}
+
+function power(base, exponent) {
+  base = Number(base);
+  exponent = Number(exponent);
+  if (!isFinite(base) || !isFinite(exponent)) throw new Error('Operands must be valid numbers');
+  return Math.pow(base, exponent);
+}
+
+function squareRoot(n) {
+  n = Number(n);
+  if (!isFinite(n)) throw new Error('Operand must be a valid number');
+  if (n < 0) throw new Error('Square root of negative number');
+  return Math.sqrt(n);
+}
+
+module.exports = { calc, modulo, power, squareRoot };
